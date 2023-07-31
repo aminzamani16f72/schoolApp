@@ -1,0 +1,6 @@
+ali,hosseini,19,12,
+ali,javadi,19,15,
+hamid,khaleghi,19,20,
+mohammad,asghari,18,16,
+amirhossein,naderi,18,15,
+mohammad,asghari,18,16,
