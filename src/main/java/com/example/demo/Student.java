@@ -11,6 +11,9 @@ public class Student {
 
     private  int mark;
 
+    public String getName() {
+        return name;
+    }
 
     public Student(String name, String family, int age, int mark) {
         this.name = name;
@@ -21,8 +24,7 @@ public class Student {
 
     public Student() {
     }
-    public  Student createStudent(){
-        Scanner scanner=new Scanner(System.in);
+    public  Student createStudent(Scanner scanner){
         System.out.println("enter student name");
         var studentName=(scanner.nextLine());
         System.out.println("enter student family");

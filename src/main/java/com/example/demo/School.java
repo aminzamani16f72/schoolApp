@@ -1,11 +1,14 @@
 package com.example.demo;
 
 import java.util.HashSet;
+import java.util.Scanner;
 
 public class School {
      HashSet<Student> students=new HashSet<>();
+    private Scanner scanner;
+    public School(Scanner scanner) {
+        this.scanner=scanner;
 
-    public School() {
     }
 
     public HashSet<Student> getStudents() {
@@ -14,7 +17,7 @@ public class School {
 
     public  void addStudent(){
         Student student=new Student();
-        students.add(student.createStudent());
+        students.add(student.createStudent(this.scanner));
     }
 
 

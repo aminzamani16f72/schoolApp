@@ -30,11 +30,11 @@ public class SchoolApp {
     }
 
     public static void addStudent() {
-        School school=new School();
+        School school=new School(new Scanner(System.in));
         school.addStudent();
     }
     public static void showListOfStudents() {
-        School school=new School();
+        School school=new School(new Scanner(System.in));
         System.out.println(Arrays.toString(school.getStudents().toArray()));
     }
 
