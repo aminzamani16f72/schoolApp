@@ -1,23 +1,17 @@
 package com.example.demo;
 
 import java.util.HashSet;
-import java.util.Scanner;
 
 public class School {
-     HashSet<Student> students=new HashSet<>();
-    private Scanner scanner;
-    public School(Scanner scanner) {
-        this.scanner=scanner;
+    private final HashSet<Student> students=new HashSet<>();
 
-    }
 
     public HashSet<Student> getStudents() {
         return students;
     }
 
-    public  void addStudent(){
-        Student student=new Student();
-        students.add(student.createStudent(this.scanner));
+    public  void addStudent(Student student){
+        students.add(student);
     }
 
 
