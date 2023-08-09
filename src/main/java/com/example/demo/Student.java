@@ -1,19 +1,18 @@
 package com.example.demo;
 
 
+import org.springframework.stereotype.Component;
+
 import java.util.Objects;
-import java.util.Scanner;
 
 public class Student {
-    private  String name;
-    private  String family;
-    private  int age;
+    private final String name;
+    private final String family;
+    private final int age;
 
     private  int mark;
 
-    public String getName() {
-        return name;
-    }
+
 
     public Student(String name, String family, int age, int mark) {
         this.name = name;
@@ -22,21 +21,11 @@ public class Student {
         this.mark = mark;
     }
 
-    public Student() {
+    public Student(String name, String family, int age) {
+        this.name = name;
+        this.family = family;
+        this.age = age;
     }
-    public  Student createStudent(Scanner scanner){
-        System.out.println("enter student name");
-        var studentName=(scanner.nextLine());
-        System.out.println("enter student family");
-        var studentFamily=(scanner.nextLine());
-        System.out.println("enter student age");
-        var studentAge=(scanner.nextInt());
-        System.out.println("enter student mark");
-        var studentMark=(scanner.nextInt());
-        return new Student(studentName,studentFamily,studentAge,studentMark);
-    }
-
-
 
     @Override
     public String toString() {

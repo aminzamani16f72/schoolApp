@@ -1,24 +1,20 @@
 package com.example.demo;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.Objects;
 
+@SpringBootTest
 class StudentTest {
 
     @Test
-    void createStudent() {
+    void equalStudent(){
+        Student a=new Student("ali","namazi",25,18);
+        Assertions.assertEquals(a.hashCode(), Objects.hash("ali","namazi",25));
+        Assertions.assertEquals(a, new Student("ali","namazi",25,21));
     }
 
-    @Test
-    void testToString() {
-    }
 
-    @Test
-    void testEquals() {
-    }
-
-    @Test
-    void testHashCode() {
-    }
 }
