@@ -1,9 +1,11 @@
 package com.example.demo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 
 
 import java.io.IOException;
@@ -11,11 +13,16 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 @SpringBootApplication
+
 public class SchoolApp {
+
+    private static School school;
+    public SchoolApp(School school) {
+        SchoolApp.school = school;
+    }
 
     public static void main(String[] args) throws IOException {
         SpringApplication.run(SchoolApp.class, args);
-        School school=new School();
         try(Scanner scanner = new Scanner(System.in)) {
             boolean runLoop = true;
             do {

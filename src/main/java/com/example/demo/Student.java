@@ -1,6 +1,7 @@
 package com.example.demo;
 
 
+
 import org.springframework.stereotype.Component;
 
 import java.util.Objects;
@@ -12,7 +13,12 @@ public class Student {
 
     private  int mark;
 
-
+    public Student() {
+        this.name="";
+        this.age=0;
+        this.mark=0;
+        this.family="";
+    }
 
     public Student(String name, String family, int age, int mark) {
         this.name = name;
@@ -25,6 +31,26 @@ public class Student {
         this.name = name;
         this.family = family;
         this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getFamily() {
+        return family;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public int getMark() {
+        return mark;
+    }
+
+    public void setMark(int mark) {
+        this.mark = mark;
     }
 
     @Override
