@@ -1,28 +1,21 @@
 package com.example.demo;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
+
 import org.springframework.stereotype.Service;
 
-
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.Scanner;
+@Service
+public class SchoolApp extends Thread{
+    private final School school;
 
-@SpringBootApplication
-
-public class SchoolApp {
-
-    private static School school;
     public SchoolApp(School school) {
-        SchoolApp.school = school;
+        this.school = school;
+        this.start();
+        System.out.println("salam");
     }
 
-    public static void main(String[] args) throws IOException {
-        SpringApplication.run(SchoolApp.class, args);
+    public void init(){
         try(Scanner scanner = new Scanner(System.in)) {
             boolean runLoop = true;
             do {
@@ -56,6 +49,7 @@ public class SchoolApp {
 
         }
     }
+    public void run() {
+        this.init();
     }
-
-
+}
