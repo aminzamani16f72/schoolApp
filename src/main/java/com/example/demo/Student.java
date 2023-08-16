@@ -3,14 +3,29 @@ package com.example.demo;
 
 
 
+
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 import java.util.Objects;
 
+@Table
+@Entity
 public class Student {
+    @Id
+    @GeneratedValue
+    private Long id;
+
     private final String name;
     private final String family;
     private final int age;
 
     private  int mark;
+
+
 
     public Student() {
         this.name="";
@@ -73,6 +88,15 @@ public class Student {
     @Override
     public int hashCode() {
         return Objects.hash(name, family, age);
+    }
+
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
     }
 }
 

@@ -7,10 +7,10 @@ import java.util.Arrays;
 import java.util.Scanner;
 @Service
 public class SchoolApp extends Thread{
-    private final School school;
+    private final SchoolService schoolService;
 
-    public SchoolApp(School school) {
-        this.school = school;
+    public SchoolApp(SchoolService schoolService) {
+        this.schoolService = schoolService;
         this.start();
         System.out.println("salam");
     }
@@ -35,13 +35,13 @@ public class SchoolApp extends Thread{
                             var studentAge = Integer.parseInt(scanner.nextLine());
                             System.out.println("enter student mark");
                             var studentMark = Integer.parseInt(scanner.nextLine());
-                            school.addStudent(new Student(studentName, studentFamily, studentAge, studentMark));
+                            schoolService.addStudent(new Student(studentName, studentFamily, studentAge, studentMark));
 
                         } catch (NumberFormatException e) {
                             System.out.println("Fill in all the entries");
                         }
                     }
-                    case 2 -> System.out.println(Arrays.toString(school.getStudents().toArray()));
+                    case 2 -> System.out.println(Arrays.toString(schoolService.getStudents().toArray()));
                     case 3 -> runLoop = false;
                     default -> System.out.println("press valid key");
                 }

@@ -1,12 +1,15 @@
 package com.example.demo;
 
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.util.HashSet;
-@Service
+@Component
 public class School {
     private static final HashSet<Student> students=new HashSet<>();
+
+    public School() {
+    }
 
     public  HashSet<Student> getStudents() {
         return students;
